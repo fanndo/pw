@@ -18,3 +18,7 @@ self.onpush =  function(e) {
       self.registration.showNotification('Hello world!', options)
     );
   };
+
+self.onpushsubscriptionchange = function () {
+    console.log('cambio subscripcion...');
+};
