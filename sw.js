@@ -1,4 +1,4 @@
-self.addEventListener('push', function(e) {
+self.onpush =  function(e) {
     var options = {
       body: 'This notification was generated from a push!',
       icon: 'images/example.png',
@@ -17,4 +17,4 @@ self.addEventListener('push', function(e) {
     e.waitUntil(
       self.registration.showNotification('Hello world!', options)
     );
-  });
+  };
