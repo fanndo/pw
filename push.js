@@ -1,12 +1,26 @@
-const push = require('web-push');
-// const vapidKeys = push.generateVAPIDKeys();
-const vapidKeys = {
-    publicKey: 'BFjkSbDToD8SWgH2JFo6XCrG7CUkxdXoOkh-8KJHH8oVdSmGS4WSHCGlE3N9heCaTpteGCBoaoTmYClWRKccAo4',
-    privateKey: 'vy-Jqh8qrKX1seaI0HP3rGuuChoxX2xo2_m06L_OOW4'
-  };
+var push = require('web-push');
 
-push.setVapidDetails('mailto:test@code.com.ar',vapidKeys.publicKey,vapidKeys.privateKey);
+let vapidKeys = {
+  publicKey:
+    'BHebmqRIcMFi18L5VUNUXVxT3E5gcbxSsL7LPMPhAMnZslSlMilnJX7rAE-0ufoLY2lF6QQ1SERXPckKIw3gbng',
+  privateKey: 'PbR4vVQEWx3PskWh8RvMatOKpkXQplNgH3lcuundIck'
+};
 
-let sub= {};
+push.setVapidDetails(
+  'mailto:test@code.co.uk',
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
 
-push.sendNotification(sub,'test mesaje');
+let sub = {
+  endpoint:
+    'https://fcm.googleapis.com/fcm/send/fwMG_ImcKYc:APA91bHtTnPUQ0tBehI7Kk1CGn4s3yhIKhJunhqiggl5XxbyVPmqxDkugwctQMzL2VDTrG_ypKwWqb1Djv-kqWbxpmsatPSjSAUldFENqCIZShaFvZFiCwH-X2hS0-Xjqv5mq2XYHcf9',
+  expirationTime: null,
+  keys: {
+    p256dh:
+      'BLHrTAa9dZ4LV5DoCgtXCXLMd21_S3qyt4eSqn6UQCjIEAuemY0QI29Mvc-LL02e0DLGPKd3xkVHjCD4eqJWHSg',
+    auth: 'TW-LBZmYtXNW7VQUPX4I0w'
+  }
+};
+
+push.sendNotification(sub, 'test message');
